@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
 
   def can_open?
-    return true if provider == 'Google'
+    return true if provider == 'google'
 
     start_date <= DateTime.now && DateTime.now <= end_date
   end
