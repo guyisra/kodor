@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.uid
       flash[:success] = "Welcome, #{@user.name}!"
     rescue
-      flash[:warning] = "There was an error while trying to authenticate you..."
+      flash[:warning] = "You are not a Klarna employee. Please see www.klarnaisrael.com for more details"
     end
     redirect_to root_path
   end
