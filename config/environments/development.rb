@@ -38,4 +38,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  ENV['GOOGLE_CLIENT_ID'] = '152483837620-7f53p9vofrhg9tqdfh7td5nvbp8c47su.apps.googleusercontent.com'
+  ENV['GOOGLE_SECRET'] = 'bXnne9jKp5KJlikzjwVBYb1F'
 end
