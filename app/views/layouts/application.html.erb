@@ -33,7 +33,7 @@
       <%= link_to image_tag("logo.png", border: 0, height: "50px", alt: "Kodor"), {action: 'index', controller: 'pages'} %>
     </div>
     <div id="navbar">
-      <% if current_user %>
+      <% if current_user.andand.can_open? %>
           <ul class="nav navbar-nav pull-right">
             <li><%= image_tag current_user.image_url || image_url("/assets/avatar.jpeg"), class: "avatar_image", alt: current_user.name %></li>
             <li><%= link_to 'Log Out', logout_path, method: :delete %></li>

@@ -6,15 +6,15 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    @current_user ||= google_user || casual_user
+    @current_user ||= User.from_uid(google_user_id || casual_user_id)
   end
 
-  def google_user
-    User.find_by(uid: session[:user_id])
+  def google_user_id
+    session[:user_id]
   end
 
-  def casual_user
-    User.find_by(uid: params[:uid])
+  def casual_user_id
+    params[:uid]
   end
 
   helper_method :current_user

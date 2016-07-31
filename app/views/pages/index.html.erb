@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if current_user.andand.can_open? %>
 
         <!--<ul>-->
           <!--<li><strong>Name:</strong> <%= current_user.name %></li>-->
