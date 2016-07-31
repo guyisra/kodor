@@ -9,7 +9,7 @@
           <!--<li><strong>URL:</strong> <%= current_user.url %></li>-->
         <!--</ul>-->
 
-    <%= link_to 'Open', open_path, method: :post, :remote => true %>
+    <%= link_to 'Open', open_path(uid: current_user.uid), method: :post, :remote => true %>
 
 <% else %>
     <%= render 'welcome' %>
