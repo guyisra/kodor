@@ -8,3 +8,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.zocial {
+  font-size: 80% !important;
+  min-width: 250px;
+}
+
+@media screen and (min-width: 768px) {
+  .zocial {
+    font-size: 100% !important;
+  }
+}
