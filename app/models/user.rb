@@ -12,6 +12,15 @@ class User < ActiveRecord::Base
       user.save!
       user
     end
+
+    def from_uid(uid)
+      User.find_by(uid: uid)
+    end
   end
 
+  def can_open?
+    return true if provider == 'Google'
+
+    start_date <= DateTime.now && DateTime.now <= end_date
+  end
 end
