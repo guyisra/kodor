@@ -1,9 +1,16 @@
 <% if current_user %>
-    <div class="page-header">
-      <h1>Hooray! The door has been opened...</h1>
-    </div>
-    <div class="panel panel-default">
-      <%= button_to 'Open Again', open_again_path, method: :post, :remote => true, class: "btn btn-primary btn-lg full-width" %>
+    <div class="button-wrapper">
+      <%= button_to open_again_path, method: :post, :remote => true do %>
+        <div class="button">
+          <div class="outer">
+            <div class="height">
+              <div class="inner">
+                OPEN DOOR
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
 <% else %>
     <%= render 'welcome' %>

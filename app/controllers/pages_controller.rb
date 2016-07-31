@@ -17,13 +17,7 @@ class PagesController < ApplicationController
   end
 
   def open_again
-    begin
-      Door.open
-      flash[:success] = "The door was opened again!"
-    rescue
-      flash[:warning] = "There was some problem openning the door..."
-    end
-
+    Door.open
     render nothing: true
   end
 
