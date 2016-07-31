@@ -1,16 +1,10 @@
 <% if current_user %>
-
-        <!--<ul>-->
-          <!--<li><strong>Name:</strong> <%= current_user.name %></li>-->
-          <!--<li><strong>Provider:</strong> <%= current_user.provider %></li>-->
-          <!--<li><strong>uID:</strong> <%= current_user.uid %></li>-->
-          <!--<li><strong>Location:</strong> <%= current_user.location %></li>-->
-          <!--<li><strong>Avatar URL:</strong> <%= current_user.image_url %></li>-->
-          <!--<li><strong>URL:</strong> <%= current_user.url %></li>-->
-        <!--</ul>-->
-
-    <%= link_to 'Open', open_path(uid: current_user.uid), method: :post, :remote => true %>
-
+    <div class="page-header">
+      <h1>Hooray! The door has been opened...</h1>
+    </div>
+    <div class="panel panel-default">
+      <%= button_to 'Open Again', open_again_path, method: :post, :remote => true, class: "btn btn-primary btn-lg full-width" %>
+    </div>
 <% else %>
     <%= render 'welcome' %>
 <% end %>
