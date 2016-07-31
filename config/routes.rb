@@ -54,5 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+  post 'open' => 'door#open'
+
   root to: 'pages#index'
 end
