@@ -10,7 +10,11 @@ class UsersController < ApplicationController
     return head :bad_request if end_date < DateTime.now || end_date < start_date
 
     uid = SecureRandom.uuid
-    User.create({ uid: uid, name: params[:name], provider: 'Klarna' }.merge(params.slice(:name, :start_date, :end_date)))
+    User.create({ uid: uid,
+                  name: params[:name],
+                  provider: 'Klarna',
+                  start_date: start_date,
+                  end_date: end_date })
 
     render json: { url: url_for(uid) }
   end
