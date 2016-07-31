@@ -14,7 +14,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'bootstrap-sass'
 
-gem "omniauth-google-oauth2"
+gem 'omniauth-google-oauth2'
+gem 'zocial-rails'
 gem 'dotenv-rails'
 gem 'redis'
 
