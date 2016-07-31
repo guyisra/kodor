@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#index'
   get '/pages/new', to: 'pages#new'
+  delete '/pages/delete', to: 'pages#delete'
   post '/pages/create', to: 'pages#create'
   get '/:uid', to: 'pages#index', as: :pages
 

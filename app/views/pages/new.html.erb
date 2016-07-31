@@ -1,14 +1,23 @@
-<div class="page-header">
-  <h1>Please insert some details...</h1>
+<!--<div class="page-header">-->
+<!--</div>-->
+
+<div>
+  <table class="table table-striped table-condensed table-bordered">
+    <tr>
+      <td><b>Name</b></td>
+      <td><b>Start time</b></td>
+      <td><b>End time</b></td>
+      <td><b>Delete</b></td>
+    </tr>
+    <% User.all.each do |user| %>
+      <tr>
+        <td class="name"><%= user.name %></td>
+        <td class="start_time"><%= user.start_date %></td>
+        <td class="end_time"><%= user.end_date %></td>
+        <td class="delete"><%= link_to 'delete', pages_delete_path(id: user.id), method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>
 </div>
-<%= form_tag '/pages/create', id: "new_user_form", class:"panel panel-default" do %>
-  <div class="panel-body">
-    <ul>
-      <li><strong>Name:</strong> <%= text_field_tag :name, nil, {class:"form-control"} %></li>
-      <li><strong>Start Date:</strong> <%= text_field_tag :start_date, nil, {type: "date", id: "start_date", class:"form-control"} %></li>
-      <li><strong>End Date:</strong> <%= text_field_tag :end_date, nil, {type: "date", id: "end_date", class:"form-control"} %></li>
-    </ul>
-    <%= submit_tag 'Submit' %>
-  </div>
-  <div id="new_user_url"></div>
-<% end %>
+
+<%= render partial: 'pages/new' %>
