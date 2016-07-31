@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.align-center {
+.login_button {
+  font-size: 28px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -11,7 +12,7 @@
 }
 
 .zocial {
-  min-width: 550px;
+  min-width: 280px;
 }
 //
 //@media screen and (min-width: 768px) {

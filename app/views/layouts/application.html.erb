@@ -34,7 +34,7 @@
       <%= link_to image_tag("logo.png", border: 0, height: "70px", alt: "Kodor"), {action: 'index', controller: 'pages'} %>
       <% if current_user %>
         <ul class="nav navbar-nav pull-right margin-mobile">
-          <li class="float-left"><li><%= image_tag current_user.image_url || image_url("/assets/avatar.jpeg"), class: "avatar_image", alt: current_user.name %></li>
+          <li class="float-left"><%= image_tag current_user.image_url || image_url("/assets/avatar.jpeg"), class: "avatar_image", alt: current_user.name %></li>
           <li class="float-left"><%= link_to 'Log Out', logout_path, method: :delete %></li>
         </ul>
       <% end %>
