@@ -20,6 +20,7 @@ gem 'zocial-rails'
 gem 'dotenv-rails'
 gem 'redis'
 gem 'andand'
+gem 'bitly'
 
 # Use jquery as the JavaScript library
 # Use jquery as the JavaScript library
