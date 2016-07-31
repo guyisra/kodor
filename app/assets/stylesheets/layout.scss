@@ -1,0 +1,16 @@
+.float-left {
+  float: left;
+}
+
+.navbar-header {
+  &.float-none {
+    float: none;
+  }
+}
+
+.navbar-nav {
+
+  &.margin-mobile {
+    margin: 10.5px 17px;
+  }
+}

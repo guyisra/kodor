@@ -5,6 +5,7 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -29,15 +30,13 @@
 
 <nav class="navbar navbar-inverse" style="border-radius: 0">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <%= link_to image_tag("logo.png", border: 0, height: "50px", alt: "Kodor"), {action: 'index', controller: 'pages'} %>
-    </div>
-    <div id="navbar">
+    <div class="navbar-header float-none">
+      <%= link_to image_tag("logo.png", border: 0, height: "70px", alt: "Kodor"), {action: 'index', controller: 'pages'} %>
       <% if current_user %>
-          <ul class="nav navbar-nav pull-right">
-            <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
-            <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-          </ul>
+        <ul class="nav navbar-nav pull-right margin-mobile">
+          <li class="float-left"><%= image_tag current_user.image_url, alt: current_user.name %></li>
+          <li class="float-left"><%= link_to 'Log Out', logout_path, method: :delete %></li>
+        </ul>
       <% end %>
     </div>
   </div>
