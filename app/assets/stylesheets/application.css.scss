@@ -18,3 +18,8 @@
 @import "bootstrap";
 @import 'bootstrap/theme';
 @import 'zocial';
+
+.avatar_image {
+ max-height: 64px;
+ max-width: 64px;
+}

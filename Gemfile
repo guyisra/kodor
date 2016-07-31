@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'bootstrap-sass'
 
+gem 'activerecord-session_store'
 gem 'omniauth-google-oauth2'
 gem 'zocial-rails'
 gem 'dotenv-rails'
@@ -37,7 +38,6 @@ gem 'rails_12factor', group: :production
 gem 'puma'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
 end
 
