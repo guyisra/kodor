@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   root to: 'pages#index'
   get '/pages/new', to: 'pages#new'
-  delete '/pages/delete', to: 'pages#delete'
-  post '/pages/create', to: 'pages#create'
+  get '/users', to: 'users#index'
+  delete '/users/delete', to: 'users#delete'
+  post '/users/create', to: 'users#create'
   get '/:uid', to: 'pages#index', as: :pages
 
   post 'open_again', to: 'pages#open_again'

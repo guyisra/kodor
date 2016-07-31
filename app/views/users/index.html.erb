@@ -7,6 +7,7 @@
       <td><b>Name</b></td>
       <td><b>Start time</b></td>
       <td><b>End time</b></td>
+      <td><b>Edit</b></td>
       <td><b>Delete</b></td>
     </tr>
     <% User.all.each do |user| %>
@@ -14,10 +15,11 @@
         <td class="name"><%= user.name %></td>
         <td class="start_time"><%= user.start_date %></td>
         <td class="end_time"><%= user.end_date %></td>
-        <td class="delete"><%= link_to 'delete', pages_delete_path(id: user.id), method: :delete %></td>
+        <td class="edit"></td>
+        <td class="delete"><%= link_to 'delete', users_delete_path(id: user.id), method: :delete %></td>
       </tr>
     <% end %>
   </table>
 </div>
 
-<%= render partial: 'pages/new' %>
+<%= render partial: 'users/new' %>
