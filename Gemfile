@@ -13,7 +13,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'bootstrap-sass'
-gem 'turbolinks'
 gem 'omniauth-google-oauth2'
 
 # Use jquery as the JavaScript library
