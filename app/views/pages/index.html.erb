@@ -3,10 +3,7 @@
       <h1>Hooray! The door has been opened...</h1>
     </div>
     <div class="panel panel-default">
-      <div class="panel-body">
-        <h3>Oh no, it's not open?</h3>
-        <%= link_to 'Open Again', open_again_path, method: :post, :remote => true %>
-      </div>
+      <%= button_to 'Open Again', open_again_path, method: :post, :remote => true, class: "btn btn-primary btn-lg full-width" %>
     </div>
 <% else %>
     <%= render 'welcome' %>
