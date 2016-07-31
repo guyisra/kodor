@@ -10,7 +10,7 @@
       <td><b>Edit</b></td>
       <td><b>Delete</b></td>
     </tr>
-    <% User.all.each do |user| %>
+    <% User.casual_users.each do |user| %>
       <tr>
         <td class="name"><%= user.name %></td>
         <td class="start_time"><%= user.start_date %></td>
