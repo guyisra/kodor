@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1>Please insert some details...</h1>
+</div>
+<%= form_tag '/pages/create', id: "new_user_form", class:"panel panel-default" do %>
+  <div class="panel-body">
+    <ul>
+      <li><strong>Name:</strong> <%= text_field_tag :name, nil, {class:"form-control"} %></li>
+    </ul>
+    <%= submit_tag 'Submit' %>
+  </div>
+  <div id="new_user_url"></div>
+<% end %>
