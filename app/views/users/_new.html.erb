@@ -2,8 +2,8 @@
     <div class="form-style-8">
     <h3> Create a new user </h3>
     <%= text_field_tag :name, nil, {placeholder: "Full Name"} %>
-    <%= text_field_tag :start_date, nil, {placeholder: "Start Date", type: "date", id: "start_date"} %>
-    <%= text_field_tag :end_date, nil, {placeholder: "End Date", type: "date", id: "end_date"} %>
+    <%= text_field_tag :start_date, nil, {placeholder: "From", type: "date", id: "start_date"} %>
+    <%= text_field_tag :end_date, nil, {placeholder: "Until", type: "date", id: "end_date"} %>
     <%= submit_tag 'Submit' %>
   </div>
 <% end %>
