@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def index
-
+    if current_user.andand.can_open?
+      @body_class = 'page'
+    end
   end
 
   def open

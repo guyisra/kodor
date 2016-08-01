@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
     begin
       @user = User.from_omniauth(request.env['omniauth.auth'])
       session[:user_id] = @user.uid
-      flash[:success] = "Welcome, #{@user.name}!"
     rescue
       flash[:warning] = "You are not a Klarna employee. Please see www.klarnaisrael.com for more details"
     end

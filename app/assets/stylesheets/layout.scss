@@ -14,3 +14,10 @@
     margin: 10.5px 17px;
   }
 }
+
+.navbar-nav > li > a {
+
+  &.logout {
+    padding: 10px 0 0 15px;
+  }
+}

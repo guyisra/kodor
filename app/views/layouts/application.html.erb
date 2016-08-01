@@ -25,18 +25,23 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
-
+  <link href='https://fonts.googleapis.com/css?family=Kanit:400,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 </head>
-<body>
+<body class="<%= @body_class %>">
 
-<nav class="navbar navbar-inverse" style="border-radius: 0">
+<nav class="navbar navbar-default" style="border-radius: 0">
   <div class="container-fluid">
     <div class="navbar-header float-none">
       <%= link_to image_tag("logo.png", border: 0, height: "70px", alt: "Kodor"), {action: 'index', controller: 'pages'} %>
       <% if current_user.andand.can_open? %>
         <ul class="nav navbar-nav pull-right margin-mobile">
           <li class="float-left"><%= image_tag current_user.image_url || image_url("/assets/avatar.jpeg"), class: "avatar_image", alt: current_user.name %></li>
-          <li class="float-left"><%= link_to 'Log Out', logout_path, method: :delete %></li>
+          <li class="float-left"><%= link_to image_tag("logout.png", border: 0, height: "30px", alt: "Log Out"), logout_path, method: :delete, class: "logout" %></li>
         </ul>
       <% end %>
     </div>
