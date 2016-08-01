@@ -1,12 +1,13 @@
 class PagesController < ApplicationController
   def index
+
+  end
+
+  def open
     if current_user.andand.can_open?
       Door.open
     end
-  end
 
-  def open_again
-    Door.open
     render nothing: true
   end
 

@@ -222,6 +222,3 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
   zocial-rails
-
-BUNDLED WITH
-   1.11.2
