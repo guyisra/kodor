@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  http_basic_authenticate_with name: ENV["KODOR_USER"], password: ENV["KODOR_PASSWORD"], only: [:index, :create, :delete]
+
   def index
 
   end
