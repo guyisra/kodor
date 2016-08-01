@@ -5,7 +5,7 @@
 
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -17,7 +17,7 @@
   <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,24 +39,31 @@
     <div class="navbar-header float-none">
       <%= link_to image_tag("logo.png", border: 0, height: "70px", alt: "Kodor"), {action: 'index', controller: 'pages'} %>
       <% if current_user.andand.can_open? %>
-        <ul class="nav navbar-nav pull-right margin-mobile">
-          <li class="float-left"><%= image_tag current_user.image_url || image_url("/assets/avatar.jpeg"), class: "avatar_image", alt: current_user.name %></li>
-          <li class="float-left"><%= link_to image_tag("logout.png", border: 0, height: "30px", alt: "Log Out"), logout_path, method: :delete, class: "logout" %></li>
-        </ul>
+          <ul class="nav navbar-nav pull-right margin-mobile">
+            <li class="float-left"><%= image_tag current_user.image_url || image_url("/assets/avatar.jpeg"), class: "avatar_image", alt: current_user.name %></li>
+            <li class="float-left"><%= link_to image_tag("logout.png", border: 0, height: "30px", alt: "Log Out"), logout_path, method: :delete, class: "logout" %></li>
+          </ul>
       <% end %>
     </div>
   </div>
 </nav>
 
 <div class="container">
-  <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>">
-        <%= value %>
-      </div>
-  <% end %>
-
   <%= yield %>
 </div>
+
+<% if flash.any? %>
+    <div class="container">
+      <div class="footer">
+        <hr/>
+        <p>
+          <% flash.each do |key, value| %>
+              <%= value %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+<% end %>
 
 </body>
 </html>
