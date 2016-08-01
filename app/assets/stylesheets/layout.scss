@@ -21,3 +21,11 @@
     padding: 10px 0 0 15px;
   }
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  & p {
+    font-size: larger;
+  }
+}
