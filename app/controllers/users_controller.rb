@@ -9,22 +9,26 @@ class UsersController < ApplicationController
   def create
     start_date = date_for(params[:start_date])
     end_date = date_for(params[:end_date]).end_of_day
-    return head :bad_request if end_date < DateTime.now || end_date < start_date
+    if end_date < DateTime.now || end_date < start_date
+      flash.now[:error] = "An error has occurred. Shame on YOU!"
+      return
+    end
 
     uid = SecureRandom.uuid
-    User.create({ uid: uid,
+    user = User.create({ uid: uid,
                   name: params[:name],
                   provider: 'Klarna',
                   start_date: start_date,
                   end_date: end_date })
 
-    render json: { url: url_for(uid) }
+    flash.now[:info] = "Created a link for #{user.name}: #{url_for(uid)}"
+    render :index
   end
 
   def delete
     User.delete(params[:id])
 
-    redirect_to :back
+    render :index
   end
 
   private

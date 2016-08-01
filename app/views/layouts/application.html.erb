@@ -48,22 +48,22 @@
   </div>
 </nav>
 
-<div class="container">
-  <%= yield %>
-</div>
 
 <% if flash.any? %>
     <div class="container">
       <div class="footer">
-        <hr/>
         <p>
           <% flash.each do |key, value| %>
               <%= value %>
           <% end %>
         </p>
       </div>
+      <hr/>
     </div>
 <% end %>
 
+<div class="container">
+  <%= yield %>
+</div>
 </body>
 </html>

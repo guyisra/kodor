@@ -1,7 +1,3 @@
-.float-left {
-  float: left;
-}
-
 .navbar-header {
   &.float-none {
     float: none;
@@ -23,8 +19,6 @@
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
   & p {
     font-size: larger;
   }

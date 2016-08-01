@@ -1,5 +1,18 @@
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.cell {
+  padding:0 30px !important;
+}
+
 .form-style-8{
   font-family: 'Open Sans Condensed', arial, sans;
+  cellpadding: 20px;
   width: 300px;
   padding: 30px;
   margin: 50px 0;
@@ -9,6 +22,27 @@
   -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
   border-color: white;
 }
+
+.users {
+  margin: 50px 0;
+
+  & td {
+    font-size: 17px;
+  }
+}
+
+.users h3 {
+  background: #0074C8;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 20px;
+  margin: 0px;
+  text-align: center;
+}
+
 .form-style-8 h3 {
   background: #0074C8;
   text-transform: uppercase;
@@ -20,15 +54,18 @@
   margin: -30px -30px 30px -30px;
   text-align: center;
 }
+
 input[type="date"]:before {
   content: attr(placeholder) !important;
   color: #aaa;
   margin-right: 0.5em;
 }
+
 input[type="date"]:focus:before,
 input[type="date"]:valid:before {
   content: "";
 }
+
 .form-style-8 input[type="text"],
 .form-style-8 input[type="date"],
 .form-style-8 input[type="datetime"],
@@ -55,10 +92,12 @@ input[type="date"]:valid:before {
   font: 16px Arial, Helvetica, sans-serif;
   height: 45px;
 }
+
 .form-style-8 textarea{
   resize:none;
   overflow: hidden;
 }
+
 .form-style-8 input[type="button"],
 .form-style-8 input[type="submit"]{
   -moz-box-shadow: inset 0px 1px 0px 0px #0054B8;
@@ -76,8 +115,13 @@ input[type="date"]:valid:before {
   text-transform: uppercase;
   margin: 30px auto 0 auto;
 }
+
 .form-style-8 input[type="button"]:hover,
 .form-style-8 input[type="submit"]:hover {
   background:linear-gradient(to bottom, #0054B8 5%, #0054B8 100%);
   background-color:#0054B8;
+}
+
+td > a{
+  color: #0074C8 !important;
 }
