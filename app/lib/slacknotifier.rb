@@ -1,6 +1,6 @@
 class Slacknotifier
  def initialize
-  @notifer = Slack::Notifier.new(ENV['SLACK_WEBHOOK'],
+  @notifier = Slack::Notifier.new(ENV['SLACK_WEBHOOK'],
                                  channel: ENV['SLACK_CHANNEL'],
                                  username: ENV['SLACK_USERNAME'])
  end

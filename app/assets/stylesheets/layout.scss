@@ -14,3 +14,18 @@
     margin: 10.5px 17px;
   }
 }
+
+.navbar-nav > li > a {
+
+  &.logout {
+    padding: 10px 0 0 15px;
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  & p {
+    font-size: larger;
+  }
+}

@@ -23,7 +23,7 @@ Rails.application.configure do
   config.active_record.migration_error = :page_load
 
   # Debug mode disables concatenation and preprocessing of assets.
-  # This option may cause significant delays in view rendering with a large
+  # This option may cause signifcant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
 
@@ -39,6 +39,6 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  ENV['GOOGLE_CLIENT_ID'] = '152483837620-7f53p9vofrhg9tqdfh7td5nvbp8c47su.apps.googleusercontent.com'
-  ENV['GOOGLE_SECRET'] = 'bXnne9jKp5KJlikzjwVBYb1F'
+  ENV['GOOGLE_CLIENT_ID'] = '<your_google_app_client_id>'
+  ENV['GOOGLE_SECRET'] = '<your_google_app_secret>'
 end
