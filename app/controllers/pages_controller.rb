@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def index
     if current_user.andand.can_open?
-      Door.open
+      @body_class = 'page'
     end
   end
 

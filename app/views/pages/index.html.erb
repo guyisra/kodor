@@ -1,17 +1,14 @@
 <% if current_user %>
-    <div class="button-wrapper">
-      <%= button_to open_again_path, method: :post, :remote => true do %>
-        <div class="button">
-          <div class="outer">
-            <div class="height">
-              <div class="inner">
-                OPEN DOOR
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
+  <div class="page-header">
+    <h1 class="title">
+      <span class="stranger">Hey <%= current_user.name.split[0] %></span>
+      <br />
+      <span class="welcome-header">welcome to Klarna! </span>
+    </h1>
+  </div>
+  <div class="button-wrapper">
+    <%= button_to 'Open Door', open_again_path, method: :post, :remote => true, class: "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored open-button" %>
+  </div>
 <% else %>
     <%= render 'welcome' %>
 <% end %>

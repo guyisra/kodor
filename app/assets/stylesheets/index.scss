@@ -8,6 +8,14 @@
   font-family: 'Kanit', sans-serif;
   font-weight: 900;
   font-size: 60px;
+  line-height: 1;
+}
+
+.title {
+  text-align: center;
+  color: whitesmoke;
+  letter-spacing: 1.8px;
+  line-height: 1;
 }
 
 .hey {
@@ -18,4 +26,12 @@
 .zocial {
   margin-top: 100px;
   min-width: 280px;
+}
+
+.welcome-header {
+  font-family: 'Lobster', cursive;
+}
+
+.page {
+  background: #0087d1;
 }
