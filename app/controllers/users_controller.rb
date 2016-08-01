@@ -34,6 +34,6 @@ class UsersController < ApplicationController
   def url_for(uid)
     url = pages_url(uid)
 
-    Rails.env == 'production' ? Bitly.client.shorten(url) : url
+    Rails.env == 'production' ? Bitly.client.shorten(url).short_url : url
   end
 end
