@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post '/users/create', to: 'users#create'
   get '/:uid', to: 'pages#index', as: :pages
 
-  post 'open_again', to: 'pages#open_again'
+  post 'open_again', to: 'pages#open'
   get '/auth/:provider/callback', to: 'sessions#create'
 
   delete '/logout', to: 'sessions#destroy'
