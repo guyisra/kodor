@@ -6,12 +6,16 @@
       <span class="welcome-header">welcome to Klarna! </span>
     </h1>
   </div>
+  <% if current_user.can_open? %>
   <div class="button-wrapper">
     <%= button_to 'Open Door', open_path, method: :post, :remote => true, class: "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored open-button" %>
   </div>
   <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
     <i class="material-icons">add</i>
   </button>
+  <% else %>
+  <div style="font-size: 18px; color: white; text-align: center"> Door is closed </div>
+  <% end %>
 <% else %>
     <%= render 'welcome' %>
 <% end %>
