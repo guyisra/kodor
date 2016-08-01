@@ -5,25 +5,12 @@ class PagesController < ApplicationController
     end
   end
 
-  def create
-    start_date = date_for(params[:start_date])
-    end_date = date_for(params[:end_date]).end_of_day
-    return head :bad_request if end_date < DateTime.now || end_date < start_date
+  def open
+    if current_user.andand.can_open?
+      Door.open
+      Slacknotifier.new.speak("#{current_user.name} has entered the office.")
+    end
 
-    uid = SecureRandom.uuid
-    User.create({ uid: uid, name: params[:name], provider: 'Klarna' }.merge(params.slice(:name, :start_date, :end_date)))
-
-    render json: { url: pages_url(uid) }
-  end
-
-  def delete
-    User.delete(params[:id])
-
-    redirect_to :back
-  end
-
-  def open_again
-    Door.open
     render nothing: true
   end
 

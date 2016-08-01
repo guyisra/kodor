@@ -20,6 +20,7 @@ gem 'zocial-rails'
 gem 'dotenv-rails'
 gem 'redis'
 gem 'andand'
+gem 'bitly'
 
 # Use jquery as the JavaScript library
 # Use jquery as the JavaScript library
@@ -37,6 +38,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
 
 gem 'puma'
+gem 'slack-notifier'
 
 group :development, :test do
   gem 'pry'

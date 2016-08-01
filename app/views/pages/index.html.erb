@@ -7,7 +7,7 @@
     </h1>
   </div>
   <div class="button-wrapper">
-    <%= button_to 'Open Door', open_again_path, method: :post, :remote => true, class: "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored open-button" %>
+    <%= button_to 'Open Door', open_path, method: :post, :remote => true, class: "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored open-button" %>
   </div>
 <% else %>
     <%= render 'welcome' %>

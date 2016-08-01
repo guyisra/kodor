@@ -2,6 +2,7 @@
 <!--</div>-->
 
 <div>
+  <h3> Users </h3>
   <table class="table table-striped table-condensed table-bordered">
     <tr>
       <td><b>Name</b></td>
@@ -9,15 +10,15 @@
       <td><b>End time</b></td>
       <td><b>Delete</b></td>
     </tr>
-    <% User.all.each do |user| %>
+    <% User.casual_users.each do |user| %>
       <tr>
         <td class="name"><%= user.name %></td>
         <td class="start_time"><%= user.start_date %></td>
         <td class="end_time"><%= user.end_date %></td>
-        <td class="delete"><%= link_to 'delete', pages_delete_path(id: user.id), method: :delete %></td>
+        <td class="delete"><%= link_to 'delete', users_delete_path(id: user.id), method: :delete %></td>
       </tr>
     <% end %>
   </table>
 </div>
 
-<%= render partial: 'pages/new' %>
+<%= render partial: 'users/new' %>
