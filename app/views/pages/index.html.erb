@@ -8,7 +8,7 @@
   </div>
   <% if current_user.can_open? %>
   <div class="button-wrapper">
-    <%= button_to 'Open Door', open_path, method: :post, :remote => true, class: "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored open-button" %>
+    <%= button_to 'Open Door', {:controller => "door", :action => "open", :uid => current_user.uid}, method: :post, :remote => true, class: "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored open-button" %>
   </div>
   <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
     <i class="material-icons">add</i>
