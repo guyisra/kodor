@@ -1,8 +1,11 @@
+require 'json'
+
 module Door
   module_function
 
-  def open
+  def open(username)
     redis_client = Redis.new
-    redis_client.publish(ENV['CHANNEL'], ENV['OPEN_SESAME'] || "meow")
+    data = {top_secert: ENV['OPEN_SESAME'], username: username}
+    redis_client.publish(ENV['CHANNEL'], data.to_json || "meow")
   end
 end

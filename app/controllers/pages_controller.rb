@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def open
     if current_user.andand.can_open?
-      Door.open
+      Door.open(current_user.name)
       Slacknotifier.new.speak("#{current_user.name} has entered the office.") if current_user.provider == "Klarna"
     end
 
