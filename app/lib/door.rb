@@ -5,7 +5,7 @@ module Door
 
   def open(username)
     redis_client = Redis.new
-    data = {top_secret: ENV['OPEN_SESAME'], username: username}
-    redis_client.publish(ENV['CHANNEL'], data.to_json || "meow")
+    data = { top_secret: ENV['OPEN_SESAME'], username: username }
+    redis_client.publish(ENV['CHANNEL'], data.to_json || 'meow')
   end
 end

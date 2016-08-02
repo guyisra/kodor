@@ -1,9 +1,8 @@
 class User < ActiveRecord::Base
-
- scope :casual_users, ->{ where(provider: "Klarna")}
+  scope :casual_users, -> { where(provider: 'Klarna') }
 
   def self.from_omniauth(auth_hash)
-    raise '401' if !auth_hash['info'].email.end_with? '@klarna.com'
+    raise '401' unless auth_hash['info'].email.end_with? '@klarna.com'
 
     user = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
     user.name = auth_hash['info']['name']

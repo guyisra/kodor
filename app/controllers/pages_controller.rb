@@ -1,14 +1,12 @@
 class PagesController < ApplicationController
   def index
-    if current_user
-      @body_class = 'page'
-    end
+    @body_class = 'page' if current_user
   end
 
   def open
     if current_user.andand.can_open?
       Door.open(current_user.name)
-      Slacknotifier.new.speak("#{current_user.name} has entered the office.") if current_user.provider == "Klarna"
+      Slacknotifier.new.speak("#{current_user.name} has entered the office.") if current_user.provider == 'Klarna'
     end
 
     render nothing: true
@@ -17,6 +15,6 @@ class PagesController < ApplicationController
   private
 
   def date_for(string)
-    DateTime.strptime(string,"%Y-%m-%d")
+    DateTime.strptime(string, '%Y-%m-%d')
   end
 end
