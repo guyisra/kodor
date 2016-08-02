@@ -1,31 +1,24 @@
-<!--<div class="page-header">-->
-<!--</div>-->
-<div class="left">
-
-<div class="users">
-  <h3 style="form-style-8"> Users </h3>
-  <table class="table table-striped table-condensed table-bordered">
-    <tr>
-      <td class="cell"><b>Name</b></td>
-      <td class="cell"><b>Start time</b></td>
-      <td class="cell"><b>End time</b></td>
-      <td class="cell"><b>Delete</b></td>
-    </tr>
-    <% User.casual_users.each do |user| %>
+<div class="row">
+  <div class="users col-md-8">
+    <h3 style="form-style-8"> Users </h3>
+    <table class="table table-striped table-condensed table-bordered">
       <tr>
-        <td class="cell name"><%= user.name %></td>
-        <td class="cell start_time"><%= user.start_date %></td>
-        <td class="cell end_time"><%= user.end_date %></td>
-        <td class="cell delete"><%= link_to 'delete', users_delete_path(id: user.id), method: :delete %></td>
+        <td class="cell"><b>Name</b></td>
+        <td class="cell"><b>Start time</b></td>
+        <td class="cell"><b>End time</b></td>
+        <td class="cell"><b>Delete</b></td>
       </tr>
-    <% end %>
-  </table>
-</div>
-
-</div>
-
-<div class="right">
-
-<%= render partial: 'users/new' %>
-
+      <% User.casual_users.each do |user| %>
+        <tr>
+          <td class="cell name"><%= user.name %></td>
+          <td class="cell start_time"><%= user.start_date %></td>
+          <td class="cell end_time"><%= user.end_date %></td>
+          <td class="cell delete"><%= link_to 'delete', users_delete_path(id: user.id), method: :delete %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col-md-4">
+    <%= render partial: 'users/new' %>
+  </div>
 </div>
