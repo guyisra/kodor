@@ -39,6 +39,8 @@ gem 'rails_12factor', group: :production
 gem 'puma'
 gem 'slack-notifier'
 
+gem 'newrelic_rpm'
+
 group :development, :test do
   gem 'pry'
 end
