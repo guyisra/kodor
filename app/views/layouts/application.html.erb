@@ -39,15 +39,15 @@
 
 <nav class="navbar navbar-default" style="border-radius: 0">
   <div class="container-fluid">
-    <div class="navbar-header float-none">
+    <div class="navbar-header pull-left">
       <%= link_to image_tag("logo.png", border: 0, height: "70px", alt: "Kodor"), {action: 'index', controller: 'pages'} %>
-      <% if current_user.andand.can_open? %>
-          <ul class="nav navbar-nav pull-right margin-mobile">
-            <li class="float-left"><%= image_tag current_user.image_url || image_url("/assets/avatar.jpeg"), class: "avatar_image", alt: current_user.name %></li>
-            <li class="float-left"><%= link_to image_tag("logout.png", border: 0, height: "30px", alt: "Log Out"), logout_path, method: :delete, class: "logout" %></li>
-          </ul>
-      <% end %>
     </div>
+    <% if current_user.andand.can_open? %>
+        <ul class="nav navbar-nav pull-right margin-mobile">
+          <li class="float-left"><%= image_tag current_user.image_url || image_url("/assets/avatar.jpeg"), class: "avatar_image", alt: current_user.name %></li>
+          <li class="float-left"><%= link_to image_tag("logout.png", border: 0, height: "30px", alt: "Log Out"), logout_path, method: :delete, class: "logout" %></li>
+        </ul>
+    <% end %>
   </div>
 </nav>
 
